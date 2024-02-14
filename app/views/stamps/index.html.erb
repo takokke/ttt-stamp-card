@@ -1,0 +1,11 @@
+<% @stamps.each do |stamp| %>
+<%= stamp.event %>
+<%= stamp.record %>
+<%= stamp.created_at %>
+<% end %>
+
+<%= form_with model: @newStamp do |f| %>
+    <%= f.text_field :event, placeholder: "種目" %>
+    <%= f.text_field :record, placeholder: "記録" %>
+    <%= f.submit "追加" %>
+<% end %>
